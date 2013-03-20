@@ -1,0 +1,28 @@
+
+CFLAGS=-g -W
+LIBS=-lpc
+OBJS=inter.o init.o check.o ow.o timer.o idos.o
+CC=gcc
+
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+libinter.a:	$(OBJS)
+	-del $@
+	ar qs $(TMPDIR)/$@ $(OBJS)
+	copy $(TMPDIR)/$@ $@
+	ranlib $@
+
+inter.o:	inter.c inter.h
+icurses.o:	icurses.c inter.h
+init.o:		init.c inter.h
+iconsole.o:	iconsole.c inter.h
+check.o:	check.c check.h
+ow.o:		ow.c ow.h
+
+clean:
+	rm -f *.o *.obj
+
+test:    test.c libinter.a
+	$(CC) $(CFLAGS) test.c -o test libinter.a $(LIBS)
+
