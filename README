@@ -1,0 +1,12 @@
+This is Inter library. Copyright (c) 1994-95 Alexander V. Lukyanov
+
+It can be compiled on DOS using Turbo C or DJGPP compilers and on UNIX
+(Linux) with Curses library. Cygwin compilation is most probably possible,
+but I have not tried it.
+
+This library is distributed under GNU LGPL license (see COPYING.LIB).
+
+See also my Life program, which makes use of this library.
+
+-- 
+   Alexander V. Lukyanov <lav@netis.ru>
