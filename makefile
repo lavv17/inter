@@ -1,6 +1,6 @@
 
 CC=gcc
-CFLAGS=-g -Wall
+CFLAGS=-O -g -Wall
 LIBS=-lcurses -lmalloc
 OBJS=inter.o init.o icurses.o check.o ow.o timer.o
 
