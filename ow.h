@@ -119,7 +119,7 @@ void  OwClearBox(int x,int y,unsigned w,unsigned h,Cell *c);
 void  OwClear(void);
 
 int   OwWaitEvent(Event *ev,int timeout);
-int   OwSimpleGetString(int x,int y,int width,unsigned char*buffer,
+int   OwGetString(int x,int y,int width,unsigned char*buffer,
                         int maxlength,Cell *c);
 
 void  OwAbsolute(int*x,int size,int field);
