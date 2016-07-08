@@ -661,21 +661,21 @@ void  OwGetCell(int x,int y,Cell *c)
       *c=UPAL[0];
 }
 
-void  OwPutString(int x,int y,unsigned char *s,Cell *a)
+void  OwPutString(int x,int y,char *s,Cell *a)
 {
    Cell  c=*a;
    OwAbsolute(&x,strlen(s),Used->Width);
    OwAbsolute(&y,1,Used->Height);
    while(*s)
    {
-      c.ch=*s++;
+      c.ch=(unsigned char)*s++;
       OwSetCell(x++,y,&c);
    }
 }
-void  OwPutFormattedString(int x,int y,unsigned char *s,Cell *a,...)
+void  OwPutFormattedString(int x,int y,char *s,Cell *a,...)
 {
    va_list  va;
-   unsigned char buffer[256];
+   char buffer[256];
    va_start(va,a);
    vsprintf(buffer,s,va);
    va_end(va);
@@ -778,7 +778,7 @@ void  OwClear(void)
 }
 
 int   OwGetString(int x,int y,int width,
-                  unsigned char *buffer,int maxlength,Cell *c)
+                  char *buffer,int maxlength,Cell *c)
 {
    int      length;
    int      pos;

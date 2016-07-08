@@ -111,15 +111,15 @@ void  OwSetCell(int x,int y,Cell *c);
 void  OwGetCell(int x,int y,Cell *c);
 void  OwSetCursorPos(int x,int y);
 void  OwCopyArea(int x,int y,unsigned w,unsigned h,int newx,int newy,int clear_flag);
-void  OwPutString(int x,int y,unsigned char *s,Cell *a);
-void  OwPutFormattedString(int x,int y,unsigned char *s,Cell *a,...);
+void  OwPutString(int x,int y,char *s,Cell *a);
+void  OwPutFormattedString(int x,int y,char *s,Cell *a,...);
 void  OwDrawFrame(int x,int y,unsigned w,unsigned h,unsigned char*f,Cell *a);
 void  OwDrawShadow(int x,int y,unsigned w,unsigned h,Cell *a);
 void  OwClearBox(int x,int y,unsigned w,unsigned h,Cell *c);
 void  OwClear(void);
 
 int   OwWaitEvent(Event *ev,int timeout);
-int   OwGetString(int x,int y,int width,unsigned char*buffer,
+int   OwGetString(int x,int y,int width,char*buffer,
                         int maxlength,Cell *c);
 
 void  OwAbsolute(int*x,int size,int field);
@@ -151,7 +151,7 @@ enum    attributes
 #define        FULL            0,0,UW,UH
 #define        FULLB(n)        n,n,UW-2*n,UH-2*n
 #define        FULL1           1,1,UW-2,UH-2
-#define        SINGLE          "ÚÄ¿³³ÀÄÙ"
-#define        DOUBLE          "ÉÍ»ººÈÍ¼"
+#define        SINGLE          (unsigned char*)"ÚÄ¿³³ÀÄÙ"
+#define        DOUBLE          (unsigned char*)"ÉÍ»ººÈÍ¼"
 
 #endif

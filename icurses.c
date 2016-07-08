@@ -109,7 +109,7 @@ unsigned CursesReadKey(int timeout)
       pfd.events=POLLIN;
       if(poll(&pfd,1,timeout)<1)
          return(K_NONE);
-      if(pfd.revents&POLLIN==0)
+      if(!(pfd.revents&POLLIN))
          return(K_NONE);
 /*      if((timeout+50)/100==0)
          nodelay(stdscr,TRUE);
